@@ -16,7 +16,7 @@ get '/' do
                 user_name: ENV['SMTP_USERNAME'],
                 password: ENV['SMTP_PASSWORD'],
                 authentication: :plain,
-                domain: 'restmailer.danmoulson.com'
+                domain: ENV['DOMAIN']
             }
         }
         Pony.mail(to: params[:recipient])
